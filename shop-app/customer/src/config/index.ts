@@ -14,8 +14,7 @@ else{
 }
 
 
-module.exports = {
-    PORT: process.env.PORT,
-    
-}
+export const PORT = process.env.PORT;
+export const DB_URL = process.env.DATABASE_URL;
+export const APP_SECRET = process.env.APP_SECRET;
 

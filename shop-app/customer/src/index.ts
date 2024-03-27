@@ -1,11 +1,27 @@
 import express from "express";
-import dotenv from "dotenv";
-const app = express();
 
-dotenv.config();
 
-app.listen(process.env.PORT,()=>{
+import {PORT} from "./config/index"
+import { dbConnection } from "./database";
 
-    console.log(`Server is running on port ${process.env.PORT}`);
 
-})
+
+
+const startServer =async ()=>{
+    const app = express();
+
+    await dbConnection();
+
+    app.listen(PORT, () => {
+        console.log(`listening to port ${PORT}`);
+  })
+  .on('error', (err:string) => {
+      console.log(err);
+      process.exit();
+  })
+  .on('close', () => {
+    
+  })
+}
+
+startServer();
