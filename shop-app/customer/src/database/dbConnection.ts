@@ -4,6 +4,8 @@ import { DB_URL } from "../config"
 export default async () => {
 
     try{
+
+
         
         if (!DB_URL) {
             throw new Error('Database URL is undefined or null');

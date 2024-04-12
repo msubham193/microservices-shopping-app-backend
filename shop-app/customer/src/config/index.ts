@@ -2,7 +2,11 @@
 import dotenv  from "dotenv";
 
 
+
+
 if(process.env.NODE_ENV === 'production'){
+
+
 
     const configFile = `./.env.${process.env.NODE_ENV}`
 
@@ -10,6 +14,7 @@ if(process.env.NODE_ENV === 'production'){
 
 }
 else{
+
     dotenv.config();
 }
 
